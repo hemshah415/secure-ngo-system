@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Send Message</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="container mt-5">
+
+<h2>Send Encrypted Message</h2>
+
+<form method="POST">
+
+    <label>Select Receiver:</label>
+    <select class="form-control mb-2" name="receiver" required>
+        {% for user in users %}
+            <option value="{{ user[0] }}">{{ user[1] }}</option>
+        {% endfor %}
+    </select>
+
+    <textarea class="form-control mb-2" name="message" placeholder="Enter your message" required></textarea>
+
+    <button class="btn btn-primary">Send</button>
+</form>
+
+<a href="/dashboard">Back to Dashboard</a>
+
+</body>
+</html>
